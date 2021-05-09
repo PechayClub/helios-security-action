@@ -1,10 +1,11 @@
-name: helios security test
-
+name: 'Helios Security Test'
+description: 'Checks availability of helios.se.ifmo.ru logins in your Java code.'
+author: 'Kamil Chulakov'
 on:
   push:
-    branches: [ master ]
+    branches: [ master, main ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, main ]
 
 jobs:
   build:
@@ -22,3 +23,8 @@ jobs:
       run: git clone https://github.com/ulyanovskk/helios-security.git
     - name: Build with Maven
       run: mvn -B package --file helios-security/pom.xml
+      
+      
+branding:
+  icon: 'check-square'
+  color: 'gray-dark'
